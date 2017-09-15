@@ -1,0 +1,29 @@
+ls
+ll
+fsdf
+popur
+gfvl
+vxcvk
+froe
+ipouoi
+jln
+iouoi
+exit
+ls
+ls -l -a
+pwd
+ls -l -a
+ls
+ls -l -a
+pwd
+[A
+ls -l lr it
+ls -l
+ls -l
+ls -l
+ls -l
+ls -l -r
+ls
+ls -l -r
+ls -l -r
+history

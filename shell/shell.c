@@ -9,6 +9,12 @@
 
 void  parse(char *line, char **argv)
 {
+
+      // change the trailing newline to '\0'
+      // fgets fucks this up
+      /*printf("strlen: %d, line0: %c", strlen(line), line[0]);*/
+      line[strlen(line) - 1] = '\0';
+
      while (*line != '\0')  /* if not the end of line ....... */ 
      {       
           while (*line == ' ' || *line == '\t' || *line == '\n')
@@ -23,10 +29,6 @@ void  parse(char *line, char **argv)
 
 void  execute(char **argv)
 {
-
-     for( int i=0; argv[i] != NULL; i++)
-         printf("%s*%", argv[i]);
-     printf("\n");
 
      pid_t  pid;
      int    status;
@@ -47,7 +49,7 @@ void  execute(char **argv)
      else
      {
           wait(&status);
-          printf("%d", status); 
+          printf("%d ", status); 
      }
 }
 
@@ -73,10 +75,9 @@ char* history(char* line)
             line_ctr++;
         }
 
+
         fclose(fp);
 
-        // return null
-        strcpy(line, "\n");
     }
 
     // case 2 - execute one of previous commands
@@ -106,8 +107,6 @@ char* history(char* line)
 
             // execute save_cmd
             line = save_cmd;
-
-            printf("%s", line);
 
             fclose(fp);
         }
@@ -157,8 +156,9 @@ char* history(char* line)
     // if string is not empty
     else
     {
+        
         //save only if line is not empty
-        if( line[0] != ' ' && line[0] != '\t' && line[0] != '\n')
+        if( line[0] != ' ' && line[0] != '\t' && line[0] != '\n' && (strncmp(line, "history", 7) != 0))
         {
             FILE *fp;
             fp = fopen("ash_history.txt", "a");
@@ -180,25 +180,20 @@ void  main(void)
 
      while (1)
      {                             /* repeat until done ....         */
-          printf("ash> ");           /*   display a prompt             */
+          printf("ash>> ");           /*   display a prompt             */
 
           fgets(line, MAX_LENGTH, stdin);              /*   read in the command line     */
 
           line = history(line);
 
-          printf("line b4 parse: %s", line);
-          printf("\n");
-          parse(line, argv);       /*   parse the line               */
-          printf("line b4 parse: %s", line);
-          printf("\n");
+          /*if( strncmp(line, "history", 7) == 0)*/
+              /*continue;*/
 
-         for( int i=0; argv[i] != NULL; i++)
-             printf("%s*%", argv[i]);
-         printf("\n");
+          parse(line, argv);       /*   parse the line               */
 
           /*printf("%s", line);*/
           if (strcmp(argv[0], "exit") == 0)  /* is it an "exit"?     */
                exit(0);            /*   exit if it is                */
-          /*execute(argv);          // [> otherwise, execute the command <]*/
+          execute(argv);          // [> otherwise, execute the command <]
      }
 }

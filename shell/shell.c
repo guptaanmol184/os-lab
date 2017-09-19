@@ -30,6 +30,10 @@ void  parse(char *line, char **argv)
 void  execute(char **argv)
 {
 
+    // don't execute if it is histoy
+    if(strcmp(argv[0], "history") == 0)
+        return;
+    
      pid_t  pid;
      int    status;
 

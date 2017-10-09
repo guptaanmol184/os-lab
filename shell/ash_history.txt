@@ -30,3 +30,6 @@ rm a.out
 ls
 asdf
 exit
+ls
+ls -l
+ls -l

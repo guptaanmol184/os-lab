@@ -28,9 +28,9 @@ int main()
     }
 
     if(strcmp(isPalin,ptr)==0)
-        printf("IS PALINDROME!!\n");
+        printf("\nIS PALINDROME!!\n");
     else
-        printf("NO!!!\n");
+        printf("\nNO!!!\n");
 
 
     shm_unlink(start);    

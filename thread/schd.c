@@ -44,8 +44,6 @@ int main()
 void* runner (void* params)
 {
     char* exe = (char*) params;
-    
     system(exe);
-
     pthread_exit(0);
 }

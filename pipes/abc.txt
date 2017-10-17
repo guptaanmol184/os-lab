@@ -1,4 +1,0 @@
-abc.txt
-a.out
-case_conversion.c
-string_sharing.c

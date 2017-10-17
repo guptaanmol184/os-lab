@@ -1,0 +1,2 @@
+(1) Develop a Software License Simulator using Semaphores.. Accept a maximum number of licenses (N) and grant concurrent access to a software (say binary of your previous threading exercises namely matdet or matinv) to a maximum N number of users (user threads).
+(2) Develop a solution for the sleeping TA problem (Refer Schilbertz exercise).

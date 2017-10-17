@@ -1,0 +1,12 @@
+(0) Test drive the various fork illustrations discussed in the class 
+(1) Test drive the variants of exec system call to execute Linux commands
+(2)X Odd and Even series generation using Parent Child relationship
+(3)X Fibonacci Series / Prime Number generation using parent child relationship.
+(4)X Ascending Order sort within Parent and Descending order sort  (or vice versa) within the child process of an input array.
+(5)X Leading Half of the array in ascending order  by parent and trailing in descending order (or vice versa) by child process. 
+(6)X Orphan and Zombie Process Simulation
+
+Ex:
+(1)X Matrix Inverse Computation (determinant computation / adj. computation)
+(2)X Magic Square Generation  (generation in one process and checking in another)
+(3)X Histogram printing of characters in a given text.

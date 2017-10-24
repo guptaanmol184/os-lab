@@ -43,7 +43,7 @@ void* use_license(void * params) {
     sem_wait(&mutex);
     sem_wait(&license_admin);
     sem_getvalue(&license_admin, &lcount);
-    printf("License acquired. Remaining license: %d.\n", lcount);
+    printf("License acquired. Remaining license: %d.\n",  lcount);
     sem_post(&mutex);
     // unlock control
 

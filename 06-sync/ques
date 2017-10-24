@@ -1,2 +1,17 @@
 (1) Develop a Software License Simulator using Semaphores.. Accept a maximum number of licenses (N) and grant concurrent access to a software (say binary of your previous threading exercises namely matdet or matinv) to a maximum N number of users (user threads).
 (2) Develop a solution for the sleeping TA problem (Refer Schilbertz exercise).
+(3)
+Simulate a Banking Scenario using semaphores for the following description:
+
+Bank shall maintain an overall balance and there shall be three counters supported in the bank for credit or debit operations by customers. 
+
+Number of customers accessing counters should be dynamic.  A withdrawal or credit transaction by a customer thread would update both his local account balance and a global overall bank balance. 
+
+Synchronize the balance statistic (both local and global ) to allow across account (differing account numbers / customers) and within account transactions. (Two different account withdrawals should not violate the overall balance and the order of credit / debit operations should be synchronised in the case of within account transactions.)
+
+ Differentiate multiple transactions by the same customer with a transaction id. 
+
+ Also support a shared token generator for use by the counters which shall be mapped on to transaction ids/customer threads for performing the transaction. 
+
+ Adopt standard banking convention such as a minimum balance for each customer and an minimum overall bank balance =  minimum balance of all customers. 
+
